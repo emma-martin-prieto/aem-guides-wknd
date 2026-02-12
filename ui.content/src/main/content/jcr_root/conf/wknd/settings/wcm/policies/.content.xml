@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
     <rep:policy/>
@@ -13,7 +13,9 @@
                         jcr:title="Content Form"
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="[/apps/wknd/components/form/button,/apps/wknd/components/form/hidden,/apps/wknd/components/form/options,/apps/wknd/components/form/text]">
-                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <jcr:content
+                            jcr:mixinTypes="[]"
+                            jcr:primaryType="nt:unstructured"/>
                     </form-container>
                 </container>
             </form>
@@ -34,10 +36,11 @@
                     jcr:title="Content Image"
                     sling:resourceType="wcm/core/components/policy/policy"
                     allowedRenditionWidths="[320,480,600,800,1024,1200,1600]"
-                    disableLazyLoading="false"
                     allowUpload="false"
                     altValueFromDAM="true"
+                    disableLazyLoading="false"
                     displayPopupTitle="true"
+                    enableAssetDelivery="true"
                     isDecorative="false"
                     jpegQuality="{Long}85"
                     titleValueFromDAM="true"
@@ -77,6 +80,8 @@
             </image>
             <text jcr:primaryType="nt:unstructured">
                 <policy_641562756958017
+                    jcr:lastModified="{Date}2026-02-12T10:24:57.302+01:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Content Text"
                     sling:resourceType="wcm/core/components/policy/policy">
@@ -130,16 +135,16 @@
                         </misctools>
                         <edit
                             jcr:primaryType="nt:unstructured"
-                            features="-"/>
+                            features="paste-plaintext,paste-wordhtml"/>
                         <findreplace
                             jcr:primaryType="nt:unstructured"
-                            features="-"/>
+                            features="*"/>
                         <undo
                             jcr:primaryType="nt:unstructured"
-                            features="-"/>
+                            features="*"/>
                         <spellcheck
                             jcr:primaryType="nt:unstructured"
-                            features="-"/>
+                            features="*"/>
                         <image
                             jcr:primaryType="nt:unstructured"
                             features="-"/>
@@ -154,10 +159,10 @@
                             features="-"/>
                         <format
                             jcr:primaryType="nt:unstructured"
-                            features="bold,italic"/>
+                            features="bold,italic,underline"/>
                         <links
                             jcr:primaryType="nt:unstructured"
-                            features="modifylink,unlink"/>
+                            features="modifylink,unlink,anchor"/>
                         <subsuperscript
                             jcr:primaryType="nt:unstructured"
                             features="-"/>
@@ -190,6 +195,8 @@
                 <policy_header
                     cq:styleDefaultElement="header"
                     jcr:description="Sets a &lt;header> element on the page header experience fragment."
+                    jcr:lastModified="{Date}2026-02-12T10:03:55.667+01:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Header"
                     sling:resourceType="wcm/core/components/policy/policy">
@@ -198,8 +205,10 @@
                 <policy_footer
                     cq:styleDefaultElement="footer"
                     jcr:description="Sets a &lt;footer> element on the page footer experience fragment."
+                    jcr:lastModified="{Date}2026-02-12T10:05:51.547+01:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="Page Footer"
+                    jcr:title="Pie de página"
                     sling:resourceType="wcm/core/components/policy/policy">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_footer>
@@ -207,10 +216,14 @@
             <container jcr:primaryType="nt:unstructured">
                 <policy_1574694950110
                     jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2026-02-12T10:19:46.745+01:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Root"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:WKND Sites Project - Content,/apps/wknd/components/form/container,group:WKND Sites Project - Structure]">
+                    components="[group:WKND Sites Project - Content,/apps/wknd/components/form/container,group:WKND Sites Project - Structure]"
+                    layout="responsiveGrid"
+                    layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -237,10 +250,13 @@
                 </policy_1574694950110>
                 <policy_1574695586800
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2026-02-12T10:13:47.657+01:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Content"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:WKND Sites Project - Content,/apps/wknd/components/form/container]">
+                    components="[group:WKND Sites Project - Content,/apps/wknd/components/form/container]"
+                    layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -268,17 +284,23 @@
                 <policy_649128221558427
                     cq:styleDefaultElement="main"
                     jcr:description="Sets a &lt;main> element on the page content area."
+                    jcr:lastModified="{Date}2026-02-12T10:07:39.345+01:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Main"
-                    sling:resourceType="wcm/core/components/policy/policy">
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_649128221558427>
                 <policy_1575040440977
                     jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2026-02-12T12:16:21.771+01:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="XF Root"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:WKND Sites Project - Content,/apps/wknd/components/form/container]">
+                    components="[group:WKND Sites Project - Content,/apps/wknd/components/form/container,group:WKND Sites Project - Structure]"
+                    layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -303,6 +325,16 @@
                         </assetToComponentMapping>
                     </cq:authoring>
                 </policy_1575040440977>
+                <policy_520869265769800
+                    jcr:lastModified="{Date}2026-02-12T10:18:49.375+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Article Page - Slide Rail"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[/apps/wknd/components/button,/apps/wknd/components/download,/apps/wknd/components/image,/apps/wknd/components/list,/apps/wknd/components/separator,/apps/wknd/components/sharing,/apps/wknd/components/text,/apps/wknd/components/title]"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_520869265769800>
             </container>
             <teaser jcr:primaryType="nt:unstructured">
                 <policy_1575031387650
@@ -339,6 +371,27 @@
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy>
             </page>
+            <breadcrumb jcr:primaryType="nt:unstructured">
+                <policy_1770887471668
+                    jcr:lastModified="{Date}2026-02-12T10:11:38.989+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Article Page-Breadcumb"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    disableShadowing="false"
+                    hideCurrent="false"
+                    showHidden="false"
+                    startLevel="4">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1770887471668>
+            </breadcrumb>
         </components>
     </wknd>
+    <wcm jcr:primaryType="nt:unstructured">
+        <foundation jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <responsivegrid jcr:primaryType="nt:unstructured"/>
+            </components>
+        </foundation>
+    </wcm>
 </jcr:root>
