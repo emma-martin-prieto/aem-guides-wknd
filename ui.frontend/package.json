@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "webpack --env dev --config ./webpack.dev.js && clientlib --verbose",
     "prod": "webpack --config ./webpack.prod.js && clientlib --verbose",
-    "start": "webpack-dev-server --open --config ./webpack.dev.js",
+    "start": "webpack-dev-server --open --config ./webpack.dev.js --env writeToDisk=true",
     "sync": "aemsync -d -p ../ui.apps/src/main/content",
     "watch": "webpack-dev-server --config ./webpack.dev.js --env writeToDisk & chokidar -c \"clientlib\" ./dist & aemsync -w ../ui.apps/src/main/content"
   },
