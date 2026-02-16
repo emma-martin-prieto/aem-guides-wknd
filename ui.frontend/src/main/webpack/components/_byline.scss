@@ -1,0 +1,38 @@
+
+.cmp-byline {
+    $imageSize: 60px;
+    display: block;
+    clear: both;
+
+    /* 1. La caja que envuelve la imagen */
+    .cmp-byline__image {
+        float: left;
+        margin-right: 25px;
+        width: $imageSize;
+    }
+
+    /* 2. La imagen real (Core Component) */
+    /* La sacamos del anidamiento de arriba para que respire */
+    .cmp-image__image {
+        width: $imageSize !important;
+        height: $imageSize !important;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* 3. El nombre */
+    .cmp-byline__name {
+        font-size: $font-size-medium;
+        font-family: $font-family-serif;
+        margin: 0;
+        padding-top: 0.5rem;
+    }
+
+    /* 4. Las ocupaciones */
+    .cmp-byline__occupations {
+        color: $gray;
+        font-size: $font-size-xsmall;
+        text-transform: uppercase;
+        margin: 0;
+    }
+}
