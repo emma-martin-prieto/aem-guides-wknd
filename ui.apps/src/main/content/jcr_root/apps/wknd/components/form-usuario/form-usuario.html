@@ -1,0 +1,29 @@
+<div class="cmp-form-usuario" data-form-usuario>
+    <h2>Registro de Usuario</h2>
+
+    <form class="cmp-form-usuario__form" novalidate>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+        </div>
+
+        <div>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos">
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="ejemplo@correo.com">
+            <span class="cmp-form-usuario__error" data-error="email"></span>
+        </div>
+
+        <button type="submit">Enviar datos</button>
+    </form>
+</div>
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.js @ categories='wknd.form.usuario'}"/>
+
+<sly data-sly-call="${clientlib.css @ categories='wknd.form.usuario'}"/>
+

@@ -1,0 +1,21 @@
+.cmp-form-usuario {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+.cmp-form-usuario label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cmp-form-usuario input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 6px;
+}
+
+.cmp-form-usuario__error {
+  color: red;
+  font-size: 12px;
+}
